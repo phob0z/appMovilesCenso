@@ -5,7 +5,8 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-        <ion-button type="submit" (click)="authService.SignOut()" expand="block">Cerrar sesión</ion-button>
+      <ion-button [routerLink]="['/form']" expand="block">Formulario</ion-button>
+      <ion-button type="submit" (click)="authService.SignOut()" expand="block" color="danger">Cerrar sesión</ion-button>
     </ion-content>
   </ion-menu>
   <div class="ion-page" id="main-content">
