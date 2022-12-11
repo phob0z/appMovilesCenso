@@ -1,22 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> CENSO ECUADOR 2022 </ion-title>
+    <ion-title> CENSO EC </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="auth-form">
   <ion-grid>
     <ion-row>
+      <ion-img src="https://www.ecuadorencifras.gob.ec/estadisticas/images/logo%20censo%20ecuador-01.png?crc=251941702" alt="Logo Censo Ecuador 2022"></ion-img>
+    </ion-row>
+    <ion-row>
       <ion-col class="ion-align-self-center">
+        <ion-button [routerLink]="['/login']" expand="block" color="danger"
+          >Ingresar</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
         <ion-button
           [routerLink]="['/registration']"
           expand="block"
           color="primary"
           >Registrarse</ion-button
-        >
-        <span class="divider line one-line">or</span>
-        <span class="already">Ya tiene cuenta?</span>
-        <ion-button [routerLink]="['/login']" expand="block" color="danger"
-          >Ingresar</ion-button
         >
       </ion-col>
     </ion-row>
