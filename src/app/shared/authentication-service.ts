@@ -38,13 +38,6 @@ export class AuthenticationService {
     return this.ngFireAuth.createUserWithEmailAndPassword(email, password);
   }
   // Email verification when new user register
-  /*SendVerificationMail() {
-    return this.ngFireAuth.currentUser.then((user) => {
-      return user!.sendEmailVerification().then(() => {
-        this.router.navigate(['login']);
-      });
-    });
-  }*/
   SendVerificationMail() {
     return this.ngFireAuth.currentUser.then(u => u!.sendEmailVerification())
     .then(() => {
@@ -57,7 +50,7 @@ export class AuthenticationService {
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
         window.alert(
-          'Password reset email has been sent, please check your inbox.'
+          'Recuperación de contraseña enviada, por favor revisa tu correo electrónico.'
         );
       })
       .catch((error) => {
