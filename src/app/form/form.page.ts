@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 import { Router } from '@angular/router';
-// import { Firestore, collection, addDoc } from "@angular/fire/firestore";
+import { PhotoService } from '../services/photo.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-form',
@@ -18,9 +19,10 @@ export class FormPage implements OnInit {
 
   constructor(
     private geolocation: Geolocation,
+    public photoService: PhotoService,
     public router: Router,
     public formBuilder: FormBuilder,
-    // private firestore: Firestore,
+    public db: AngularFirestore
   ) {
     this.getGeolocation();
     this.user = JSON.parse(localStorage.getItem('user')!).email;
@@ -45,11 +47,15 @@ export class FormPage implements OnInit {
         this.longitude = resp.coords.longitude;
       })
       .catch((error) => {
-        console.log('Error getting location', error);
+        console.log('Error obteniendo la ubicación', error);
       });
   }
 
-  ngOnInit() {}
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
+
+  async ngOnInit() {}
 
   guardarCenso() {
     const censo = {
@@ -65,14 +71,13 @@ export class FormPage implements OnInit {
     if (!this.censoForm.valid) {
       window.alert('Por favor llena todos los campos!');
     } else {
-      console.log("GUARDAR AQUÍ! el objeto censo");
-      
-      // this.afDB.object('censos').set(censo).then(() => {
-      //     window.alert('Información guardada con exito!');
-      //     this.router.navigate(['dashboard']);
-      //   });
-      // const censos = collection(this.firestore, 'censos');
-      // addDoc(censos, censo);
+      this.db
+        .collection('censos')
+        .add(censo)
+        .then(() => {
+          window.alert('Información guardada con exito!');
+          this.router.navigate(['dashboard']);
+        });
     }
   }
 }

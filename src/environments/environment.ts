@@ -4,14 +4,23 @@
 
 export const environment = {
   production: false,
+  // firebaseConfig : {
+  //   apiKey: "AIzaSyBRIsVvVDXPtXzl0RvuBjljN553XD3ZpRw",
+  //   authDomain: "censo-61303.firebaseapp.com",
+  //   databaseURL: "https://censo-61303-default-rtdb.firebaseio.com",
+  //   projectId: "censo-61303",
+  //   storageBucket: "censo-61303.appspot.com",
+  //   messagingSenderId: "614419099638",
+  //   appId: "1:614419099638:web:ab47bba16262719f59a1d7"
+  // }
   firebaseConfig : {
-    apiKey: "AIzaSyBRIsVvVDXPtXzl0RvuBjljN553XD3ZpRw",
-    authDomain: "censo-61303.firebaseapp.com",
-    databaseURL: "https://censo-61303-default-rtdb.firebaseio.com",
-    projectId: "censo-61303",
-    storageBucket: "censo-61303.appspot.com",
-    messagingSenderId: "614419099638",
-    appId: "1:614419099638:web:ab47bba16262719f59a1d7"
+    apiKey: "AIzaSyCImshfRGFxmPpfSV3Qz533ypCd0fq9l1Y",
+    authDomain: "prueba1appsmoviles.firebaseapp.com",
+    databaseURL: "https://prueba1appsmoviles-default-rtdb.firebaseio.com",
+    projectId: "prueba1appsmoviles",
+    storageBucket: "prueba1appsmoviles.appspot.com",
+    messagingSenderId: "37006638613",
+    appId: "1:37006638613:web:bd641068a4eb2016a8581c"
   }
 };
 
