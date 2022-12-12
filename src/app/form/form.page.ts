@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 import { AuthenticationService } from '../shared/authentication-service';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-form',
@@ -10,7 +11,8 @@ import { AuthenticationService } from '../shared/authentication-service';
 export class FormPage implements OnInit {
   constructor(
     private geolocation: Geolocation,
-    public authService: AuthenticationService
+    public authService: AuthenticationService,
+    public photoService: PhotoService
   ) {
     this.getGeolocation();
     this.user = JSON.parse(localStorage.getItem('user')!).email;
@@ -32,7 +34,15 @@ export class FormPage implements OnInit {
       });
   }
 
-  ngOnInit() {
+  //Camara
+
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
+
+  
+  async ngOnInit() {
+    
   }
 
 }

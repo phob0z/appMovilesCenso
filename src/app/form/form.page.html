@@ -67,14 +67,23 @@
     <div class="btn-photo label">
       <ion-label position="stacked">Foto de la casa</ion-label>
     </div>
-
+    <br/>
     <div class="btn-photo img">
-      <ion-button shape="round">
-        <ion-icon slot="icon-only" name="camera"></ion-icon>
-      </ion-button>
+
+        <ion-button (click)="addPhotoToGallery()">
+          <ion-icon name="camera"></ion-icon>
+        </ion-button>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
+            <ion-img [src]="photo.webviewPath"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
-
-    <div class="btn-photo img">
+    <br/>
+    <div class="btn-photo img" >
       <ion-button color="danger" [routerLink]="['/dashboard']">
         Terminar formulario
       </ion-button>
