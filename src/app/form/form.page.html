@@ -15,15 +15,15 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Apellidos</ion-label>
+      <ion-label position="stacked">Nombres</ion-label>
       <ion-input></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Nombres</ion-label>
+      <ion-label position="stacked">Apellidos</ion-label>
       <ion-input></ion-input>
     </ion-item>
-    
+
     <ion-item>
       <ion-label position="stacked">Teléfono celular</ion-label>
       <ion-input></ion-input>
@@ -41,13 +41,33 @@
 
     <ion-item>
       <ion-label position="stacked">Ubicación</ion-label>
-      <ion-input disabled="true"></ion-input>
+        <ion-grid>
+          <ion-row>
+            <ion-label position="fixed">
+              <ion-text color="primary">
+                <p>Latitud</p>
+              </ion-text>
+              <p>{{latitude}}</p>
+            </ion-label>
+            <ion-label position="fixed">
+              <ion-text color="primary">
+                <p>Longitud</p>
+              </ion-text>
+              <p>{{longitude}}</p>
+            </ion-label>
+          </ion-row>
+        </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Usuario que registra</ion-label>
+      <ion-input disabled="true">{{user}}</ion-input>
     </ion-item>
 
     <div class="btn-photo label">
       <ion-label position="stacked">Foto de la casa</ion-label>
     </div>
-    
+
     <div class="btn-photo img">
       <ion-button shape="round">
         <ion-icon slot="icon-only" name="camera"></ion-icon>
@@ -60,5 +80,4 @@
       </ion-button>
     </div>
   </ion-list>
-  
 </ion-content>

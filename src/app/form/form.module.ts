@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { FormPageRoutingModule } from './form-routing.module';
+import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 
 import { FormPage } from './form.page';
 
@@ -15,6 +16,7 @@ import { FormPage } from './form.page';
     IonicModule,
     FormPageRoutingModule
   ],
-  declarations: [FormPage]
+  declarations: [FormPage],
+  providers: [Geolocation]
 })
 export class FormPageModule {}

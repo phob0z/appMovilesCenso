@@ -5,12 +5,4 @@ import { Component, Input } from '@angular/core';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-
-
-export class HomePage {
-
-  // constructor() {}
-  @Input() latitude = "";
-  // @Input() longitude = "";
-
-}
+export class HomePage {}
