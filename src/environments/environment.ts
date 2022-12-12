@@ -13,7 +13,7 @@ export const environment = {
   //   messagingSenderId: "614419099638",
   //   appId: "1:614419099638:web:ab47bba16262719f59a1d7"
   // }
-  firebaseConfig : {
+  /*firebaseConfig : {
     apiKey: "AIzaSyCImshfRGFxmPpfSV3Qz533ypCd0fq9l1Y",
     authDomain: "prueba1appsmoviles.firebaseapp.com",
     databaseURL: "https://prueba1appsmoviles-default-rtdb.firebaseio.com",
@@ -21,6 +21,15 @@ export const environment = {
     storageBucket: "prueba1appsmoviles.appspot.com",
     messagingSenderId: "37006638613",
     appId: "1:37006638613:web:bd641068a4eb2016a8581c"
+  }*/
+  firebaseConfig : {
+    apiKey: "AIzaSyALd9Qp1wD2dN6gQWWfa1H63yKp-cwGOwY",
+    authDomain: "app-censo-f7fb9.firebaseapp.com",
+    databaseURL: "https://app-censo-f7fb9-default-rtdb.firebaseio.com/",
+    projectId: "app-censo-f7fb9",
+    storageBucket: "app-censo-f7fb9.appspot.com",
+    messagingSenderId: "576182895005",
+    appId: "1:576182895005:web:b0221dd07cb8fa71a2af74"
   }
 };
 
